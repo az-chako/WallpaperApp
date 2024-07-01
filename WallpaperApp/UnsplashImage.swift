@@ -2,16 +2,16 @@
 //  UnsplashImage.swift
 //  WallpaperApp
 //
-//  Created by spark-03 on 2024/06/25.
+//  Created by spark-03 on 2024/07/01.
 //
 
 import Foundation
 
-struct UnsplashImage: Codable {
+struct UnsplashImage: Decodable {
     let id: String
-    let urls: URLS
+    let urls: ImageURLs
     let user: User
-    let updatedAt: String
+    let updatedAt: Date
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -21,10 +21,10 @@ struct UnsplashImage: Codable {
     }
 }
 
-struct URLS: Codable {
+struct ImageURLs: Decodable {
     let regular: String
 }
 
-struct User: Codable {
+struct User: Decodable {
     let name: String
 }

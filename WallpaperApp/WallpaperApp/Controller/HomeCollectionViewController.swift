@@ -4,25 +4,34 @@
 //
 //  Created by spark-03 on 2024/06/25.
 //
-
+//
 import UIKit
 
 private let reuseIdentifier = "CustomCell"
 private let accessKey = "2t1vdj2pJ7IJmMz_1os77S5M5SlnjKvCpIn8yHg0vlI"
 
-class HomeCollectionViewController: UICollectionViewController {
-
+class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     var images: [UnsplashImage] = []
+    var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // カスタムレイアウトの設定
-        collectionView.setCollectionViewLayout(CustomLayout(), animated: false)
-
+        
+        // レイアウトの設定
+        let layout = CustomLayout()
+        
+        // UICollectionViewの初期化
+        collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         // カスタムセルの登録
-        self.collectionView!.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        // UICollectionViewをビューに追加
+        self.view.addSubview(collectionView)
+        
         // データの取得
         fetchImages()
     }
@@ -43,23 +52,24 @@ class HomeCollectionViewController: UICollectionViewController {
                     self.collectionView.reloadData()
                 }
             } catch {
+                // エラーハンドリング
             }
         }
         task.resume()
     }
 
     // セクション数を返す
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
     // セクション内のアイテム数を返す
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
 
     // セルを構成する
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -77,21 +87,21 @@ class HomeCollectionViewController: UICollectionViewController {
 
         // 投稿者の名前を設定
         cell.nameLabel.text = images[indexPath.item].user.name
-        
+
         // 角丸を設定
         if indexPath.item == 0 {
             cell.imageView.layer.cornerRadius = 9
         } else {
             cell.imageView.layer.cornerRadius = 6
         }
-        
+
         cell.imageView.layer.masksToBounds = true
-        
+
         return cell
     }
 
     // セルが選択された時に呼ばれるメソッド
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = images[indexPath.item]
         performSegue(withIdentifier: "showDetail", sender: selectedImage)
     }
