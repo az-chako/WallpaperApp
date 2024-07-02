@@ -4,10 +4,9 @@
 //
 //  Created by spark-03 on 2024/07/01.
 //
-
 import Foundation
 
-struct UnsplashImage: Decodable {
+struct UnsplashImage: Codable {
     let id: String
     let urls: ImageURLs
     let user: User
@@ -21,10 +20,10 @@ struct UnsplashImage: Decodable {
     }
 }
 
-struct ImageURLs: Decodable {
+struct ImageURLs: Codable {
     let regular: String
 }
 
-struct User: Decodable {
+struct User: Codable {
     let name: String
 }
