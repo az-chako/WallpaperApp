@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -214,6 +215,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="vRM-Kx-fVW" kind="show" identifier="showDetail" id="XyO-Vs-e3U"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -243,6 +247,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xD-qg-BHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1217.5572519083969" y="777.46478873239437"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XJa-JF-XoX">
+            <objects>
+                <viewController id="0xt-DS-Cfb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xMy-p1-MNR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8b-Tk-fY5">
+                                <rect key="frame" x="0.0" y="59" width="393" height="734"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このアプリについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mab-UL-aIz">
+                                        <rect key="frame" x="15" y="15" width="278" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="このアプリはUnsplash APIを利用して構築したポートフォリオアプリです。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K18-Ec-TIb">
+                                        <rect key="frame" x="15" y="53" width="363" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PNA-Hc-l0a"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="謝辞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2i-4o-bXh">
+                                        <rect key="frame" x="15" y="133" width="78" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="k2i-4o-bXh" secondAttribute="trailing" constant="300" id="7ak-VU-NFI"/>
+                                    <constraint firstAttribute="trailing" secondItem="K18-Ec-TIb" secondAttribute="trailing" constant="15" id="C3b-2J-Xn9"/>
+                                    <constraint firstItem="mab-UL-aIz" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="WeS-Y9-Kxl"/>
+                                    <constraint firstItem="K18-Ec-TIb" firstAttribute="top" secondItem="mab-UL-aIz" secondAttribute="bottom" constant="12" id="aVD-UJ-uRc"/>
+                                    <constraint firstItem="k2i-4o-bXh" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="bB3-NT-djJ"/>
+                                    <constraint firstItem="mab-UL-aIz" firstAttribute="top" secondItem="r8b-Tk-fY5" secondAttribute="top" constant="15" id="bS2-9w-OyU"/>
+                                    <constraint firstItem="k2i-4o-bXh" firstAttribute="top" secondItem="K18-Ec-TIb" secondAttribute="bottom" constant="30" id="mnU-cx-IFl"/>
+                                    <constraint firstItem="K18-Ec-TIb" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="obL-s7-dhN"/>
+                                    <constraint firstAttribute="trailing" secondItem="mab-UL-aIz" secondAttribute="trailing" constant="100" id="xhR-FT-kfV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EQF-k6-mmt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r8b-Tk-fY5" firstAttribute="top" secondItem="EQF-k6-mmt" secondAttribute="top" id="BUV-Gm-3sm"/>
+                            <constraint firstItem="EQF-k6-mmt" firstAttribute="trailing" secondItem="r8b-Tk-fY5" secondAttribute="trailing" id="cc6-8A-otE"/>
+                            <constraint firstItem="r8b-Tk-fY5" firstAttribute="centerY" secondItem="xMy-p1-MNR" secondAttribute="centerY" id="xe8-fX-PjN"/>
+                            <constraint firstItem="r8b-Tk-fY5" firstAttribute="leading" secondItem="EQF-k6-mmt" secondAttribute="leading" id="zKE-DO-r8g"/>
+                            <constraint firstItem="r8b-Tk-fY5" firstAttribute="centerX" secondItem="xMy-p1-MNR" secondAttribute="centerX" id="zYq-gZ-0P1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uo-DO-jV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="1543"/>
         </scene>
         <!--Home Collection View Controller-->
         <scene sceneID="RcW-X2-Fd2">
@@ -333,7 +400,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADP-3Y-Shh">
                                                 <rect key="frame" x="28.666666666666657" y="0.0" width="334.33333333333337" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="AccentColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -361,7 +428,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-3I-Jfl">
                                                 <rect key="frame" x="43" y="0.0" width="320" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="AccentColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -419,6 +486,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="knx-dQ-JcK"/>
                     <connections>
+                        <outlet property="UpdateDate" destination="UcW-w1-43s" id="hxA-X2-WDf"/>
+                        <outlet property="authorName" destination="ADP-3Y-Shh" id="VXC-7D-2ib"/>
+                        <outlet property="country" destination="fc7-3I-Jfl" id="OxX-fW-taC"/>
                         <outlet property="pictureImg" destination="jFd-E6-Kfu" id="dhU-h4-EZM"/>
                     </connections>
                 </viewController>
@@ -464,7 +534,13 @@
             <point key="canvasLocation" x="3153" y="437"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XyO-Vs-e3U"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -10,6 +10,9 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var pictureImg:UIImageView!
+    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var country: UILabel!
+    @IBOutlet weak var UpdateDate: UILabel!
     var imageUrlString: String?
 
         override func viewDidLoad() {

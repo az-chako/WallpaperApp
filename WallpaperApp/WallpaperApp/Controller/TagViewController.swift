@@ -27,6 +27,7 @@ class TagViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         setupButtons()
+        fetchImagesForColor("red")
     }
     
     private func setupCollectionView() {
@@ -46,7 +47,10 @@ class TagViewController: UIViewController {
     
     @IBAction func tagButtonTapped(_ sender: UIButton) {
         guard let color = sender.titleLabel?.text?.lowercased() else { return }
-        
+        fetchImagesForColor(color)
+    }
+    
+    private func fetchImagesForColor(_ color: String) {
         unsplashService.fetchImages(forColor: color) { [weak self] result in
             guard let self = self else { return }
             
@@ -94,4 +98,6 @@ extension TagViewController: UICollectionViewDataSource, UICollectionViewDelegat
         
         return cell
     }
+    
+    
 }
