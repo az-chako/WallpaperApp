@@ -9,6 +9,8 @@ import UIKit
 
 enum FooterTab {
     case home
+    case tag
+    case app
 }
 
 protocol FooterTabViewDelegate: AnyObject {
@@ -24,6 +26,12 @@ class FooterTabView: UIView {
     
     @IBAction func didTapHome(_ sender: Any) {
         delegate?.footerTabView(self, didselectTab: .home)
+    }
+    @IBAction func didTapTag(_ sender: Any) {
+        delegate?.footerTabView(self, didselectTab: .tag)
+    }
+    @IBAction func didTapApp(_ sender: Any) {
+        delegate?.footerTabView(self, didselectTab: .app)
     }
     
     override init(frame: CGRect) {

@@ -16,6 +16,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
     }
     
     func footerTabView(_ footerTabView: FooterTabView, didselectTab tab: FooterTab) {
+        switchViewController(selectedTab: tab)
     }
     
     var selectedTab: FooterTab = .home
@@ -23,24 +24,41 @@ class ViewController: UIViewController, FooterTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         switchViewController(selectedTab: .home)
-        }
-    
+    }
     
     private lazy var homeCollectionViewController: HomeCollectionViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as! HomeCollectionViewController
-        add(childViewController: viewController)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "HomeCollectionViewController") as! HomeCollectionViewController
+        return viewController
+    }()
+    
+    private lazy var tagViewController: TagViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TagViewController") as! TagViewController
+        return viewController
+    }()
+    
+    private lazy var appViewController: AppViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "AppViewController") as! AppViewController
         return viewController
     }()
     
     private func switchViewController(selectedTab: FooterTab) {
+        // 現在表示中の子ViewControllerを削除
+        children.forEach { remove(childViewController: $0) }
+        
         switch selectedTab {
         case .home:
             add(childViewController: homeCollectionViewController)
+        case .tag:
+            add(childViewController: tagViewController)
+        case .app:
+            add(childViewController: appViewController)
         }
         self.selectedTab = selectedTab
         view.bringSubviewToFront(footerTabView)
-        }
+    }
     
     private func add(childViewController: UIViewController) {
         addChild(childViewController)

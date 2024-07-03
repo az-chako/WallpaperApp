@@ -25,6 +25,7 @@
 		8B8771352C338F3300AC452C /* UnsplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8771342C338F3300AC452C /* UnsplashService.swift */; };
 		8B8771372C33936200AC452C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8771362C33936200AC452C /* ImageCell.swift */; };
 		8BC4C2C42C323C760012FF90 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4C2C32C323C760012FF90 /* FooterTabView.swift */; };
+		8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8B8771342C338F3300AC452C /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
 		8B8771362C33936200AC452C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		8BC4C2C32C323C760012FF90 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
+		8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				8B8771342C338F3300AC452C /* UnsplashService.swift */,
 				8B021FB12C2E47BE00E124E3 /* Controller */,
 				8B4B7FF72C2A58C70030797C /* Main.storyboard */,
+				8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */,
 				8B4B7FFC2C2A58C80030797C /* LaunchScreen.storyboard */,
 				8B4B7FFA2C2A58C80030797C /* Assets.xcassets */,
 				8B4B7FFF2C2A58C80030797C /* Info.plist */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */,
 				8B4B800A2C2A7F7F0030797C /* CustomLayout.swift in Sources */,
 				8B8771352C338F3300AC452C /* UnsplashService.swift in Sources */,
 				8B4B800C2C2A85DE0030797C /* CustomCollectionViewCell.swift in Sources */,

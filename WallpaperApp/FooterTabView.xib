@@ -94,6 +94,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="48"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="didTapTag:" destination="-1" eventType="touchUpInside" id="GCe-dp-ggC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -132,6 +135,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="48"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="didTapApp:" destination="-1" eventType="touchUpInside" id="9nl-WH-TgE"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
