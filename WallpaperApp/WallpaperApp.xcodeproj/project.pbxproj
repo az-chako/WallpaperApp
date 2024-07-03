@@ -71,6 +71,7 @@
 				8B4B800F2C2A8D9B0030797C /* ShowPictureViewController.swift */,
 				8B4B80052C2A78220030797C /* HomeCollectionViewController.swift */,
 				8B7DE3C02C32768B0053668D /* TagViewController.swift */,
+				8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -78,11 +79,6 @@
 		8B4B7FE52C2A58C70030797C = {
 			isa = PBXGroup;
 			children = (
-				8B1BD3422C2E970D00B3C4AD /* FooterTabView.xib */,
-				8BC4C2C32C323C760012FF90 /* FooterTabView.swift */,
-				8B4B800B2C2A85DE0030797C /* CustomCollectionViewCell.swift */,
-				8B4B80092C2A7F7F0030797C /* CustomLayout.swift */,
-				8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */,
 				8B4B7FF02C2A58C70030797C /* WallpaperApp */,
 				8B4B7FEF2C2A58C70030797C /* Products */,
 			);
@@ -101,17 +97,37 @@
 			children = (
 				8B4B7FF12C2A58C70030797C /* AppDelegate.swift */,
 				8B4B7FF32C2A58C70030797C /* SceneDelegate.swift */,
-				8B021FB42C2E740A00E124E3 /* CustomTagViewCell.swift */,
-				8B8771362C33936200AC452C /* ImageCell.swift */,
-				8B8771342C338F3300AC452C /* UnsplashService.swift */,
+				8BEE7EC22C34E94700D0CD39 /* Model */,
 				8B021FB12C2E47BE00E124E3 /* Controller */,
+				8BEE7EC12C34E8EB00D0CD39 /* FooterTab */,
 				8B4B7FF72C2A58C70030797C /* Main.storyboard */,
-				8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */,
 				8B4B7FFC2C2A58C80030797C /* LaunchScreen.storyboard */,
 				8B4B7FFA2C2A58C80030797C /* Assets.xcassets */,
 				8B4B7FFF2C2A58C80030797C /* Info.plist */,
 			);
 			path = WallpaperApp;
+			sourceTree = "<group>";
+		};
+		8BEE7EC12C34E8EB00D0CD39 /* FooterTab */ = {
+			isa = PBXGroup;
+			children = (
+				8BC4C2C32C323C760012FF90 /* FooterTabView.swift */,
+				8B1BD3422C2E970D00B3C4AD /* FooterTabView.xib */,
+			);
+			path = FooterTab;
+			sourceTree = "<group>";
+		};
+		8BEE7EC22C34E94700D0CD39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B4B800B2C2A85DE0030797C /* CustomCollectionViewCell.swift */,
+				8B4B80092C2A7F7F0030797C /* CustomLayout.swift */,
+				8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */,
+				8B021FB42C2E740A00E124E3 /* CustomTagViewCell.swift */,
+				8B8771362C33936200AC452C /* ImageCell.swift */,
+				8B8771342C338F3300AC452C /* UnsplashService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
