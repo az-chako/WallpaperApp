@@ -281,15 +281,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="無料で高品質な写真を提供しているUnsplashに感謝します。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Er8-M9-q52">
+                                        <rect key="frame" x="15" y="171" width="363" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vbB-vk-Q0c"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jiv-i3-ePA">
+                                        <rect key="frame" x="15" y="223" width="363" height="54"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="k2i-4o-bXh" secondAttribute="trailing" constant="300" id="7ak-VU-NFI"/>
+                                    <constraint firstItem="Jiv-i3-ePA" firstAttribute="top" secondItem="Er8-M9-q52" secondAttribute="bottom" constant="12" id="AU3-gY-oXg"/>
                                     <constraint firstAttribute="trailing" secondItem="K18-Ec-TIb" secondAttribute="trailing" constant="15" id="C3b-2J-Xn9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jiv-i3-ePA" secondAttribute="trailing" constant="15" id="ECN-ha-JHf"/>
                                     <constraint firstItem="mab-UL-aIz" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="WeS-Y9-Kxl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Er8-M9-q52" secondAttribute="trailing" constant="15" id="XGw-pS-58s"/>
                                     <constraint firstItem="K18-Ec-TIb" firstAttribute="top" secondItem="mab-UL-aIz" secondAttribute="bottom" constant="12" id="aVD-UJ-uRc"/>
                                     <constraint firstItem="k2i-4o-bXh" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="bB3-NT-djJ"/>
                                     <constraint firstItem="mab-UL-aIz" firstAttribute="top" secondItem="r8b-Tk-fY5" secondAttribute="top" constant="15" id="bS2-9w-OyU"/>
+                                    <constraint firstItem="Er8-M9-q52" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="dLV-ym-Rqf"/>
+                                    <constraint firstItem="Er8-M9-q52" firstAttribute="top" secondItem="k2i-4o-bXh" secondAttribute="bottom" constant="12" id="fE8-j0-bXi"/>
+                                    <constraint firstItem="Jiv-i3-ePA" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="fn6-xN-Qva"/>
                                     <constraint firstItem="k2i-4o-bXh" firstAttribute="top" secondItem="K18-Ec-TIb" secondAttribute="bottom" constant="30" id="mnU-cx-IFl"/>
                                     <constraint firstItem="K18-Ec-TIb" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="obL-s7-dhN"/>
                                     <constraint firstAttribute="trailing" secondItem="mab-UL-aIz" secondAttribute="trailing" constant="100" id="xhR-FT-kfV"/>
@@ -538,6 +557,7 @@
         <segue reference="XyO-Vs-e3U"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="logo" width="360" height="54"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
