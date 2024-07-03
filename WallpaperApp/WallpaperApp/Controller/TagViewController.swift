@@ -29,7 +29,6 @@ class TagViewController: UIViewController {
         setupButtons()
         fetchImagesForColor("red")
     }
-    
     private func setupCollectionView() {
         let layout = CustomLayout()
         collectionView.collectionViewLayout = layout
@@ -65,8 +64,18 @@ class TagViewController: UIViewController {
             }
         }
     }
+    
+    // 新しく追加したメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let detailVC = segue.destination as? DetailViewController,
+               let selectedImage = sender as? UnsplashImage {
+                detailVC.imageUrlString = selectedImage.urls.regular
+            }
+        }
+    }
 }
-
+// UICollectionViewDataSource, UICollectionViewDelegate をextensionで実装
 extension TagViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -99,5 +108,9 @@ extension TagViewController: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
     }
     
-    
+    // 新しく追加したメソッド
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedImage = images[indexPath.item]
+        performSegue(withIdentifier: "showDetail", sender: selectedImage)
+    }
 }
