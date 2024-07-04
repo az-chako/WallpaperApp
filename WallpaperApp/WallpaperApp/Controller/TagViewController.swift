@@ -33,6 +33,7 @@ class TagViewController: UIViewController {
             collectionView.collectionViewLayout = layout
             collectionView.dataSource = self
             collectionView.delegate = self
+            collectionView.alwaysBounceVertical = true 
             collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
         }
         

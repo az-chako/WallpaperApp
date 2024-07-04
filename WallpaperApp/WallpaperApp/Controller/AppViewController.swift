@@ -14,7 +14,6 @@ class AppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ロゴにタップジェスチャーを追加
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
         logo.addGestureRecognizer(tapGesture)
         logo.isUserInteractionEnabled = true

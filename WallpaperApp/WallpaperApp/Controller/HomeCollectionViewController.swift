@@ -25,8 +25,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-//        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
+        collectionView.alwaysBounceVertical = true
 
         // カスタムセルの登録
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -38,22 +37,6 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         fetchImages()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
-      // 1. ヘッダーセクションを作成
-//      guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader else {
-//        fatalError("ヘッダーがありません")
-//      
-//
-//     // 2. ヘッダーセクションのラベルにテキストをセット
-//     if kind == UICollectionView.elementKindSectionHeader {
-//       header.sectionHeader.text = "セクションヘッダー"
-//       return header
-//    }
-//
-//     return UICollectionReusableView()
-//    }
-
     // 画像を取得するメソッド
     func fetchImages() {
         let urlString = "https://api.unsplash.com/photos/?per_page=5&order_by=latest&client_id=\(accessKey)"

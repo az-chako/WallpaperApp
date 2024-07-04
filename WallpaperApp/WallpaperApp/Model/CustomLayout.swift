@@ -10,6 +10,7 @@ import UIKit
 class CustomLayout: UICollectionViewLayout {
     private var layoutAttributes = [UICollectionViewLayoutAttributes]()
     private var contentSize: CGSize = .zero
+    private let bottomPadding: CGFloat = 200 // 余白を追加
 
     override func prepare() {
         guard let collectionView = collectionView else { return }
@@ -39,8 +40,9 @@ class CustomLayout: UICollectionViewLayout {
             layoutAttributes.append(attributes)
         }
 
-        let totalHeight = yOffset + smallItemSize.height * 2 + padding
+        let totalHeight = yOffset + smallItemSize.height * 2 + padding + bottomPadding
         contentSize = CGSize(width: width, height: totalHeight)
+        
     }
 
     override var collectionViewContentSize: CGSize {

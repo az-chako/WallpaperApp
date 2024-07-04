@@ -11,7 +11,7 @@ struct UnsplashService {
     private let accessKey = "2t1vdj2pJ7IJmMz_1os77S5M5SlnjKvCpIn8yHg0vlI"
     
     func fetchImages(forColor color: String, completion: @escaping (Result<[UnsplashImage], Error>) -> Void) {
-        let urlString = "https://api.unsplash.com/search/photos/?per_page=5&order_by=latest&query=color=\(color)&client_id=\(accessKey)"
+        let urlString = "https://api.unsplash.com/search/photos/?per_page=5&query=color=\(color)&client_id=\(accessKey)"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))

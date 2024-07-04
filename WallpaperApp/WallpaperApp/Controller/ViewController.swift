@@ -45,7 +45,6 @@ class ViewController: UIViewController, FooterTabViewDelegate {
     }()
     
     private func switchViewController(selectedTab: FooterTab) {
-        // 現在表示中の子ViewControllerを削除
         children.forEach { remove(childViewController: $0) }
         
         switch selectedTab {

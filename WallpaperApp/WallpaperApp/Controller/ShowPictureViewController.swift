@@ -16,13 +16,11 @@ class ShowPictureViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // UIScrollViewにUIImageViewを追加
         imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(imageView)
         
-        // オートレイアウトを設定
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
@@ -30,18 +28,15 @@ class ShowPictureViewController: UIViewController, UIScrollViewDelegate {
             imageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
         
-        // UIScrollViewの設定
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         
-        // タップジェスチャーの設定
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
         doubleTapGesture.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTapGesture)
     }
-    
-    // ピンチイン・ピンチアウトの設定
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
