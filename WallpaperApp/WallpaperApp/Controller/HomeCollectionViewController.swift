@@ -11,30 +11,48 @@ private let reuseIdentifier = "CustomCell"
 private let accessKey = "2t1vdj2pJ7IJmMz_1os77S5M5SlnjKvCpIn8yHg0vlI"
 
 class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
+
     var images: [UnsplashImage] = []
     var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // レイアウトの設定
         let layout = CustomLayout()
-        
+
         // UICollectionViewの初期化
         collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         
+//        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
+
         // カスタムセルの登録
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
+
         // UICollectionViewをビューに追加
         self.view.addSubview(collectionView)
-        
+
         // データの取得
         fetchImages()
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+      // 1. ヘッダーセクションを作成
+//      guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader else {
+//        fatalError("ヘッダーがありません")
+//      
+//
+//     // 2. ヘッダーセクションのラベルにテキストをセット
+//     if kind == UICollectionView.elementKindSectionHeader {
+//       header.sectionHeader.text = "セクションヘッダー"
+//       return header
+//    }
+//
+//     return UICollectionReusableView()
+//    }
 
     // 画像を取得するメソッド
     func fetchImages() {
@@ -111,7 +129,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         if segue.identifier == "showDetail" {
             if let detailVC = segue.destination as? DetailViewController,
                let selectedImage = sender as? UnsplashImage {
-                detailVC.imageUrlString = selectedImage.urls.regular
+                detailVC.unsplashImage = selectedImage
             }
         }
     }

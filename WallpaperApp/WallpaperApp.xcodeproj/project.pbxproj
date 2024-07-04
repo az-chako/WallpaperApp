@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		8B021FB02C2E477400E124E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B021FAF2C2E477400E124E3 /* ViewController.swift */; };
 		8B021FB52C2E740A00E124E3 /* CustomTagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B021FB42C2E740A00E124E3 /* CustomTagViewCell.swift */; };
+		8B03BB412C363C0D001F9AE3 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03BB402C363C0D001F9AE3 /* SectionHeader.swift */; };
 		8B1BD3432C2E970D00B3C4AD /* FooterTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BD3422C2E970D00B3C4AD /* FooterTabView.xib */; };
+		8B1E07EF2C36383A00579927 /* UnsplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E07EE2C36383A00579927 /* UnsplashService.swift */; };
 		8B4B7FF22C2A58C70030797C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B7FF12C2A58C70030797C /* AppDelegate.swift */; };
 		8B4B7FF42C2A58C70030797C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B7FF32C2A58C70030797C /* SceneDelegate.swift */; };
 		8B4B7FF92C2A58C70030797C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4B7FF72C2A58C70030797C /* Main.storyboard */; };
@@ -22,16 +24,19 @@
 		8B4B80102C2A8D9B0030797C /* ShowPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B800F2C2A8D9B0030797C /* ShowPictureViewController.swift */; };
 		8B7DE3BF2C32693C0053668D /* UnsplashImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */; };
 		8B7DE3C12C32768B0053668D /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DE3C02C32768B0053668D /* TagViewController.swift */; };
-		8B8771352C338F3300AC452C /* UnsplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8771342C338F3300AC452C /* UnsplashService.swift */; };
 		8B8771372C33936200AC452C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8771362C33936200AC452C /* ImageCell.swift */; };
 		8BC4C2C42C323C760012FF90 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4C2C32C323C760012FF90 /* FooterTabView.swift */; };
 		8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */; };
+		8BEE7EC42C34F21D00D0CD39 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE7EC32C34F21D00D0CD39 /* Color.swift */; };
+		8BEE7EC62C35029200D0CD39 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEE7EC52C35029200D0CD39 /* SectionHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B021FAF2C2E477400E124E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B021FB42C2E740A00E124E3 /* CustomTagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTagViewCell.swift; sourceTree = "<group>"; };
+		8B03BB402C363C0D001F9AE3 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		8B1BD3422C2E970D00B3C4AD /* FooterTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTabView.xib; sourceTree = "<group>"; };
+		8B1E07EE2C36383A00579927 /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
 		8B4B7FEE2C2A58C70030797C /* WallpaperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4B7FF12C2A58C70030797C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B4B7FF32C2A58C70030797C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,10 +51,11 @@
 		8B4B800F2C2A8D9B0030797C /* ShowPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPictureViewController.swift; sourceTree = "<group>"; };
 		8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImage.swift; sourceTree = "<group>"; };
 		8B7DE3C02C32768B0053668D /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
-		8B8771342C338F3300AC452C /* UnsplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashService.swift; sourceTree = "<group>"; };
 		8B8771362C33936200AC452C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		8BC4C2C32C323C760012FF90 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
 		8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		8BEE7EC32C34F21D00D0CD39 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		8BEE7EC52C35029200D0CD39 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +103,12 @@
 			children = (
 				8B4B7FF12C2A58C70030797C /* AppDelegate.swift */,
 				8B4B7FF32C2A58C70030797C /* SceneDelegate.swift */,
-				8BEE7EC22C34E94700D0CD39 /* Model */,
 				8B021FB12C2E47BE00E124E3 /* Controller */,
+				8BEE7EC22C34E94700D0CD39 /* Model */,
 				8BEE7EC12C34E8EB00D0CD39 /* FooterTab */,
 				8B4B7FF72C2A58C70030797C /* Main.storyboard */,
+				8BEE7EC52C35029200D0CD39 /* SectionHeader.xib */,
+				8B03BB402C363C0D001F9AE3 /* SectionHeader.swift */,
 				8B4B7FFC2C2A58C80030797C /* LaunchScreen.storyboard */,
 				8B4B7FFA2C2A58C80030797C /* Assets.xcassets */,
 				8B4B7FFF2C2A58C80030797C /* Info.plist */,
@@ -124,8 +132,9 @@
 				8B4B80092C2A7F7F0030797C /* CustomLayout.swift */,
 				8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */,
 				8B021FB42C2E740A00E124E3 /* CustomTagViewCell.swift */,
+				8B1E07EE2C36383A00579927 /* UnsplashService.swift */,
 				8B8771362C33936200AC452C /* ImageCell.swift */,
-				8B8771342C338F3300AC452C /* UnsplashService.swift */,
+				8BEE7EC32C34F21D00D0CD39 /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			files = (
 				8B4B7FFE2C2A58C80030797C /* LaunchScreen.storyboard in Resources */,
 				8B4B7FFB2C2A58C80030797C /* Assets.xcassets in Resources */,
+				8BEE7EC62C35029200D0CD39 /* SectionHeader.xib in Resources */,
 				8B4B7FF92C2A58C70030797C /* Main.storyboard in Resources */,
 				8B1BD3432C2E970D00B3C4AD /* FooterTabView.xib in Resources */,
 			);
@@ -204,15 +214,17 @@
 			files = (
 				8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */,
 				8B4B800A2C2A7F7F0030797C /* CustomLayout.swift in Sources */,
-				8B8771352C338F3300AC452C /* UnsplashService.swift in Sources */,
 				8B4B800C2C2A85DE0030797C /* CustomCollectionViewCell.swift in Sources */,
 				8B021FB52C2E740A00E124E3 /* CustomTagViewCell.swift in Sources */,
+				8B1E07EF2C36383A00579927 /* UnsplashService.swift in Sources */,
+				8BEE7EC42C34F21D00D0CD39 /* Color.swift in Sources */,
 				8B021FB02C2E477400E124E3 /* ViewController.swift in Sources */,
 				8B7DE3C12C32768B0053668D /* TagViewController.swift in Sources */,
 				8B4B80062C2A78220030797C /* HomeCollectionViewController.swift in Sources */,
 				8B4B7FF22C2A58C70030797C /* AppDelegate.swift in Sources */,
 				8BC4C2C42C323C760012FF90 /* FooterTabView.swift in Sources */,
 				8B4B7FF42C2A58C70030797C /* SceneDelegate.swift in Sources */,
+				8B03BB412C363C0D001F9AE3 /* SectionHeader.swift in Sources */,
 				8B7DE3BF2C32693C0053668D /* UnsplashImage.swift in Sources */,
 				8B4B80102C2A8D9B0030797C /* ShowPictureViewController.swift in Sources */,
 				8B4B800E2C2A8D0F0030797C /* DetailViewController.swift in Sources */,

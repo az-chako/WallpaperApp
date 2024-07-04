@@ -12,41 +12,84 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pictureImg:UIImageView!
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var country: UILabel!
-    @IBOutlet weak var UpdateDate: UILabel!
+    @IBOutlet weak var updateDate: UILabel!
     var imageUrlString: String?
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-
-            // UIImageViewのアスペクト比を1:1に設定
-            pictureImg.contentMode = .scaleAspectFill
-            pictureImg.clipsToBounds = true
-
-            if let imageUrlString = imageUrlString, let imageUrl = URL(string: imageUrlString) {
-                DispatchQueue.global().async {
-                    if let imageData = try? Data(contentsOf: imageUrl) {
-                        DispatchQueue.main.async {
-                            self.pictureImg.image = UIImage(data: imageData)
-                        }
+    var unsplashImage: UnsplashImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupImage()
+        setupLabels()
+        setupTapGesture()
+    }
+    
+    func setupImage() {
+        pictureImg.contentMode = .scaleAspectFill
+        pictureImg.clipsToBounds = true
+        
+        if let imageUrlString = unsplashImage?.urls.regular,
+           let imageUrl = URL(string: imageUrlString) {
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: imageUrl) {
+                    DispatchQueue.main.async {
+                        self.pictureImg.image = UIImage(data: imageData)
                     }
-                }
-            }
-
-            // タップジェスチャーを追加
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-            pictureImg.isUserInteractionEnabled = true
-            pictureImg.addGestureRecognizer(tapGesture)
-        }
-
-        @objc func imageTapped() {
-            performSegue(withIdentifier: "showPicture", sender: nil)
-        }
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showPicture" {
-                if let showPictureVC = segue.destination as? ShowPictureViewController {
-                    showPictureVC.image = pictureImg.image
                 }
             }
         }
     }
+    
+    func setupLabels() {
+        guard let user = unsplashImage?.user else {
+            return
+        }
+        
+        authorName.text = user.name
+        authorName.isUserInteractionEnabled = true
+        authorName.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openAuthorLink)))
+        
+        if let location = user.location {
+            country.text = location
+            country.isHidden = false
+        } else {
+            country.text = "Location not provided"
+            country.isHidden = false
+        }
+        
+        
+        if let updatedAt = unsplashImage?.updatedAt {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            if let date = dateFormatter.date(from: updatedAt) {
+                dateFormatter.dateFormat = "yyyy年MM月dd日"
+                updateDate.text = dateFormatter.string(from: date)
+            }
+        }
+    }
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        pictureImg.isUserInteractionEnabled = true
+        pictureImg.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func imageTapped() {
+        performSegue(withIdentifier: "showPicture", sender: nil)
+    }
+    
+    @objc func openAuthorLink() {
+        if let username = unsplashImage?.user.username,
+           let url = URL(string: "https://unsplash.com/ja/@\(username)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPicture" {
+            if let showPictureVC = segue.destination as? ShowPictureViewController {
+                showPictureVC.image = pictureImg.image
+            }
+        }
+    }
+}

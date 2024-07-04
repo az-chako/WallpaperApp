@@ -6,24 +6,24 @@
 //
 
 import UIKit
+import SafariServices
 
 class AppViewController: UIViewController {
-
+    
+    @IBOutlet weak var logo: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // ロゴにタップジェスチャーを追加
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+        logo.addGestureRecognizer(tapGesture)
+        logo.isUserInteractionEnabled = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func logoTapped() {
+        if let url = URL(string: "https://unsplash.com/ja") {
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
+        }
     }
-    */
-
 }

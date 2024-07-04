@@ -291,16 +291,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jiv-i3-ePA">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jiv-i3-ePA">
                                         <rect key="frame" x="15" y="223" width="363" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="k2i-4o-bXh" secondAttribute="trailing" constant="300" id="7ak-VU-NFI"/>
-                                    <constraint firstItem="Jiv-i3-ePA" firstAttribute="top" secondItem="Er8-M9-q52" secondAttribute="bottom" constant="12" id="AU3-gY-oXg"/>
                                     <constraint firstAttribute="trailing" secondItem="K18-Ec-TIb" secondAttribute="trailing" constant="15" id="C3b-2J-Xn9"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jiv-i3-ePA" secondAttribute="trailing" constant="15" id="ECN-ha-JHf"/>
                                     <constraint firstItem="mab-UL-aIz" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="WeS-Y9-Kxl"/>
                                     <constraint firstAttribute="trailing" secondItem="Er8-M9-q52" secondAttribute="trailing" constant="15" id="XGw-pS-58s"/>
                                     <constraint firstItem="K18-Ec-TIb" firstAttribute="top" secondItem="mab-UL-aIz" secondAttribute="bottom" constant="12" id="aVD-UJ-uRc"/>
@@ -308,7 +307,6 @@
                                     <constraint firstItem="mab-UL-aIz" firstAttribute="top" secondItem="r8b-Tk-fY5" secondAttribute="top" constant="15" id="bS2-9w-OyU"/>
                                     <constraint firstItem="Er8-M9-q52" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="dLV-ym-Rqf"/>
                                     <constraint firstItem="Er8-M9-q52" firstAttribute="top" secondItem="k2i-4o-bXh" secondAttribute="bottom" constant="12" id="fE8-j0-bXi"/>
-                                    <constraint firstItem="Jiv-i3-ePA" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="fn6-xN-Qva"/>
                                     <constraint firstItem="k2i-4o-bXh" firstAttribute="top" secondItem="K18-Ec-TIb" secondAttribute="bottom" constant="30" id="mnU-cx-IFl"/>
                                     <constraint firstItem="K18-Ec-TIb" firstAttribute="leading" secondItem="r8b-Tk-fY5" secondAttribute="leading" constant="15" id="obL-s7-dhN"/>
                                     <constraint firstAttribute="trailing" secondItem="mab-UL-aIz" secondAttribute="trailing" constant="100" id="xhR-FT-kfV"/>
@@ -325,6 +323,9 @@
                             <constraint firstItem="r8b-Tk-fY5" firstAttribute="centerX" secondItem="xMy-p1-MNR" secondAttribute="centerX" id="zYq-gZ-0P1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logo" destination="r8b-Tk-fY5" id="XRS-Ic-hve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uo-DO-jV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,13 +341,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="deW-wG-UnK">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D3H-yd-01W">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell " id="D3H-yd-01W">
+                                <rect key="frame" x="0.0" y="50" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lG4-Wa-G1b">
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
@@ -357,6 +358,10 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="nWP-Rd-agk">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="GC0-eg-s5E" id="Up5-pV-DeB"/>
                             <outlet property="delegate" destination="GC0-eg-s5E" id="hla-U2-XIV"/>
@@ -505,10 +510,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="knx-dQ-JcK"/>
                     <connections>
-                        <outlet property="UpdateDate" destination="UcW-w1-43s" id="hxA-X2-WDf"/>
                         <outlet property="authorName" destination="ADP-3Y-Shh" id="VXC-7D-2ib"/>
                         <outlet property="country" destination="fc7-3I-Jfl" id="OxX-fW-taC"/>
                         <outlet property="pictureImg" destination="jFd-E6-Kfu" id="dhU-h4-EZM"/>
+                        <outlet property="updateDate" destination="UcW-w1-43s" id="maS-tg-Kki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrG-nG-lJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -554,7 +559,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XyO-Vs-e3U"/>
+        <segue reference="bwq-hf-Vbs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="360" height="54"/>
