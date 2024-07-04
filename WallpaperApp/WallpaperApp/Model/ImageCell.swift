@@ -28,7 +28,6 @@ class ImageCell: UICollectionViewCell {
     }
     
     func configure(with imageUrl: URL) {
-        // URLSessionを使用して画像をダウンロードし、imageViewに設定します
         URLSession.shared.dataTask(with: imageUrl) { [weak self] data, _, error in
             guard let data = data, error == nil else {
                 return

@@ -15,7 +15,6 @@ class CustomTagViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // ImageViewの設定
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         contentView.addSubview(imageView)
@@ -27,7 +26,6 @@ class CustomTagViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
-        // NameLabelContainerの設定
         nameLabelContainer.backgroundColor = UIColor.white
         nameLabelContainer.layer.cornerRadius = 15
         nameLabelContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]

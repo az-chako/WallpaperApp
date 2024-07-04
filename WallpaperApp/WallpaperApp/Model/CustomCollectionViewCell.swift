@@ -15,7 +15,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // ImageViewの設定
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         contentView.addSubview(imageView)
@@ -39,7 +38,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
             nameLabelContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6)
         ])
         
-        // NameLabelの設定
         nameLabel.font = UIFont.systemFont(ofSize: 14)
         nameLabel.textColor = .black
         nameLabel.textAlignment = .right

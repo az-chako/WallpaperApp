@@ -116,11 +116,11 @@
                                             <constraint firstAttribute="height" constant="24" id="5WD-VQ-JIR"/>
                                             <constraint firstAttribute="width" constant="99" id="KnQ-fC-lGn"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="green">
                                             <backgroundConfiguration key="background">
-                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" systemColor="labelColor"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
@@ -216,7 +216,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <segue destination="vRM-Kx-fVW" kind="show" identifier="showDetail" id="XyO-Vs-e3U"/>
+                                            <segue destination="vRM-Kx-fVW" kind="modal" identifier="showDetail" id="XyO-Vs-e3U"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -354,11 +354,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <segue destination="vRM-Kx-fVW" kind="show" identifier="showDetail" id="bwq-hf-Vbs"/>
+                                    <segue destination="vRM-Kx-fVW" kind="modal" identifier="showDetail" id="bwq-hf-Vbs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionHeader" id="nWP-Rd-agk">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CG1-jL-1VJ">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
@@ -559,7 +559,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bwq-hf-Vbs"/>
+        <segue reference="XyO-Vs-e3U"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="360" height="54"/>

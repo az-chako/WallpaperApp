@@ -10,7 +10,7 @@ import UIKit
 class CustomLayout: UICollectionViewLayout {
     private var layoutAttributes = [UICollectionViewLayoutAttributes]()
     private var contentSize: CGSize = .zero
-    private let bottomPadding: CGFloat = 200 // 余白を追加
+    private let bottomPadding: CGFloat = 200
 
     override func prepare() {
         guard let collectionView = collectionView else { return }
@@ -20,16 +20,14 @@ class CustomLayout: UICollectionViewLayout {
         let width = collectionView.bounds.width
         var yOffset: CGFloat = 0
 
-        // 上部の360x360の画像
         let largeItemSize = CGSize(width: 360, height: 360)
         let largeItemIndexPath = IndexPath(item: 0, section: 0)
         let largeItemAttributes = UICollectionViewLayoutAttributes(forCellWith: largeItemIndexPath)
         largeItemAttributes.frame = CGRect(x: (width - largeItemSize.width) / 2, y: yOffset, width: largeItemSize.width, height: largeItemSize.height)
         layoutAttributes.append(largeItemAttributes)
         
-        yOffset += largeItemSize.height + 18 // 少しスペースを空ける
+        yOffset += largeItemSize.height + 18
 
-        // 下部の171x171の画像4枚
         let smallItemSize = CGSize(width: 171, height: 171)
         let padding: CGFloat = (width - (smallItemSize.width * 2)) / 3
         for i in 1..<5 {
