@@ -18,38 +18,38 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             collectionView.dataSource = self
             collectionView.alwaysBounceVertical = true
             collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-            
-//            collectionView.register(UINib(nibName: "SectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
         }
     }
     
     var images: [UnsplashImage] = []
     
     // Label to display "新着写真"
-        private let titleLabel: UILabel = {
-            let label = UILabel()
-            label.text = "新着写真"
-            label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-            label.textColor = .black
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "新着写真"
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add title label to the view
-            view.addSubview(titleLabel)
-            setupTitleLabelConstraints()
-            
-            let layout = CustomLayout()
-            collectionView.setCollectionViewLayout(layout, animated: false)
-            
-            // Adjust collection view content inset
-            collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
-            
-            fetchImages()
+        view.addSubview(titleLabel)
+        setupTitleLabelConstraints()
+        
+        let layout = CustomLayout()
+        collectionView.setCollectionViewLayout(layout, animated: false)
+        
+        // Adjust collection view content inset
+        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        
+        fetchImages()
     }
+    
+    // Setup title label constraints
     private func setupTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -57,15 +57,6 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
-
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
-//        header.configure(title: "新着写真")
-//        return header
-//        }
-//
-    
-
     
     func fetchImages() {
         let urlString = "https://api.unsplash.com/photos/?per_page=5&order_by=latest&client_id=\(accessKey)"
@@ -128,6 +119,12 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = images[indexPath.item]
         performSegue(withIdentifier: "showDetail", sender: selectedImage)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let alpha = 1.0 - (offsetY / 0.0)
+        titleLabel.alpha = max(alpha, 0.0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
