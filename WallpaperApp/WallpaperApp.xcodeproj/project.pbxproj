@@ -25,6 +25,7 @@
 		8B7DE3BF2C32693C0053668D /* UnsplashImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */; };
 		8B7DE3C12C32768B0053668D /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DE3C02C32768B0053668D /* TagViewController.swift */; };
 		8B8771372C33936200AC452C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8771362C33936200AC452C /* ImageCell.swift */; };
+		8B9C0BD92C378AA400DCB406 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C0BD82C378AA400DCB406 /* WebViewController.swift */; };
 		8BC4C2C42C323C760012FF90 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC4C2C32C323C760012FF90 /* FooterTabView.swift */; };
 		8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */; };
 		8BEE7EC42C34F21D00D0CD39 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE7EC32C34F21D00D0CD39 /* Color.swift */; };
@@ -52,6 +53,7 @@
 		8B7DE3BE2C32693C0053668D /* UnsplashImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImage.swift; sourceTree = "<group>"; };
 		8B7DE3C02C32768B0053668D /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		8B8771362C33936200AC452C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		8B9C0BD82C378AA400DCB406 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8BC4C2C32C323C760012FF90 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
 		8BEE7EBF2C34E3F000D0CD39 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		8BEE7EC32C34F21D00D0CD39 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		8B4B7FE52C2A58C70030797C = {
 			isa = PBXGroup;
 			children = (
+				8B9C0BD82C378AA400DCB406 /* WebViewController.swift */,
 				8B4B7FF02C2A58C70030797C /* WallpaperApp */,
 				8B4B7FEF2C2A58C70030797C /* Products */,
 			);
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEE7EC02C34E3F000D0CD39 /* AppViewController.swift in Sources */,
+				8B9C0BD92C378AA400DCB406 /* WebViewController.swift in Sources */,
 				8B4B800A2C2A7F7F0030797C /* CustomLayout.swift in Sources */,
 				8B4B800C2C2A85DE0030797C /* CustomCollectionViewCell.swift in Sources */,
 				8B021FB52C2E740A00E124E3 /* CustomTagViewCell.swift in Sources */,

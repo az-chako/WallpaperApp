@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
     
@@ -25,7 +26,6 @@ class DetailViewController: UIViewController {
     }
     
     func setupNavigationBar() {
-        // タイトルの設定
         if let alternativeSlug = unsplashImage?.alternativeSlugs?.ja {
             self.title = alternativeSlug
         }
@@ -88,7 +88,9 @@ class DetailViewController: UIViewController {
     @objc func openAuthorLink() {
         if let username = unsplashImage?.user.username,
            let url = URL(string: "https://unsplash.com/ja/@\(username)") {
-            UIApplication.shared.open(url)
+            let webViewController = WebViewController(url: url)
+            let navigationController = UINavigationController(rootViewController: webViewController)
+            present(navigationController, animated: true, completion: nil)
         }
     }
     
