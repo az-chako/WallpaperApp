@@ -42,11 +42,10 @@ class TagViewController: UIViewController {
         let buttons = [redButton, blueButton, greenButton, yellowButton, whiteButton, blackButton]
         buttons.forEach { button in
             button?.addTarget(self, action: #selector(tagButtonTapped(_:)), for: .touchUpInside)
-            button?.layer.cornerRadius = 10  // ボタンの丸みを保持
-            button?.tintColor = .black  // デフォルトの文字色を設定
+            button?.layer.cornerRadius = 10
+            button?.tintColor = .black
         }
     }
-    
     
     @IBAction func tagButtonTapped(_ sender: UIButton) {
         guard let color = sender.titleLabel?.text?.lowercased() else { return }
@@ -61,8 +60,6 @@ class TagViewController: UIViewController {
         
         fetchImagesForColor(color)
     }
-    
-    
     
     private func fetchImagesForColor(_ color: String) {
         unsplashService.fetchImages(forColor: color) { [weak self] result in

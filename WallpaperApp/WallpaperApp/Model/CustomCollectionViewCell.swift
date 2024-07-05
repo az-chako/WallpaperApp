@@ -26,7 +26,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
-        // NameLabelContainerの設定
         nameLabelContainer.backgroundColor = UIColor.white
         nameLabelContainer.layer.cornerRadius = 15
         nameLabelContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]

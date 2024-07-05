@@ -27,7 +27,8 @@ class DetailViewController: UIViewController {
     
     func setupNavigationBar() {
         if let alternativeSlug = unsplashImage?.alternativeSlugs?.ja {
-            self.title = alternativeSlug
+            let cleanedTitle = alternativeSlug.replacingOccurrences(of: "-[a-zA-Z0-9]+$", with: "", options: .regularExpression)
+                    self.title = cleanedTitle
         }
     }
     

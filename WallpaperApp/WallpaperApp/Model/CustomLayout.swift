@@ -29,11 +29,12 @@ class CustomLayout: UICollectionViewLayout {
         yOffset += largeItemSize.height + 18
 
         let smallItemSize = CGSize(width: 171, height: 171)
-        let padding: CGFloat = (width - (smallItemSize.width * 2)) / 3
+        let padding: CGFloat = 18
+        let sidePadding: CGFloat = (width - (smallItemSize.width * 2) - padding) / 2
         for i in 1..<5 {
             let indexPath = IndexPath(item: i, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            let xOffset = padding + CGFloat((i - 1) % 2) * (smallItemSize.width + padding)
+            let xOffset = sidePadding + CGFloat((i - 1) % 2) * (smallItemSize.width + padding)
             attributes.frame = CGRect(x: xOffset, y: yOffset + CGFloat((i - 1) / 2) * (smallItemSize.height + padding), width: smallItemSize.width, height: smallItemSize.height)
             layoutAttributes.append(attributes)
         }
