@@ -18,10 +18,17 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupImage()
         setupLabels()
         setupTapGesture()
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        // タイトルの設定
+        if let alternativeSlug = unsplashImage?.alternativeSlugs?.ja {
+            self.title = alternativeSlug
+        }
     }
     
     func setupImage() {

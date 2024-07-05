@@ -11,12 +11,14 @@ struct UnsplashImage: Codable {
     let urls: ImageURLs
     let user: User
     let updatedAt: String
+    let alternativeSlugs: AlternativeSlugs?
 
     enum CodingKeys: String, CodingKey {
         case id
         case urls
         case user
         case updatedAt = "updated_at"
+        case alternativeSlugs = "alternative_slugs"
     }
 }
 
@@ -28,4 +30,8 @@ struct User: Codable {
     let name: String
     let username: String
     let location: String?
+}
+
+struct AlternativeSlugs: Codable {
+    let ja: String?
 }

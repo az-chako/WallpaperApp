@@ -216,7 +216,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <segue destination="vRM-Kx-fVW" kind="modal" identifier="showDetail" id="XyO-Vs-e3U"/>
+                                            <segue destination="vRM-Kx-fVW" kind="show" identifier="showDetail" id="XyO-Vs-e3U"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -354,7 +354,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <segue destination="vRM-Kx-fVW" kind="modal" identifier="showDetail" id="bwq-hf-Vbs"/>
+                                    <segue destination="vRM-Kx-fVW" kind="show" identifier="showDetail" id="bwq-hf-Vbs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
