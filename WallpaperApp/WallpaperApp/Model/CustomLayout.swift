@@ -10,7 +10,7 @@ import UIKit
 class CustomLayout: UICollectionViewLayout {
     private var layoutAttributes = [UICollectionViewLayoutAttributes]()
     private var contentSize: CGSize = .zero
-    private let bottomPadding: CGFloat = 200
+    private let bottomPadding: CGFloat = 100
 
     override func prepare() {
         guard let collectionView = collectionView else { return }

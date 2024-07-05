@@ -13,7 +13,6 @@ private let accessKey = "2t1vdj2pJ7IJmMz_1os77S5M5SlnjKvCpIn8yHg0vlI"
 class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.alwaysBounceVertical = true
@@ -23,7 +22,6 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     var images: [UnsplashImage] = []
     
-    // Label to display "新着写真"
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "新着写真"
@@ -35,21 +33,17 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Add title label to the view
+
         view.addSubview(titleLabel)
         setupTitleLabelConstraints()
         
         let layout = CustomLayout()
         collectionView.setCollectionViewLayout(layout, animated: false)
-        
-        // Adjust collection view content inset
         collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
         fetchImages()
     }
     
-    // Setup title label constraints
     private func setupTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -73,7 +67,6 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
                     self.collectionView.reloadData()
                 }
             } catch {
-                // エラーハンドリング
             }
         }
         task.resume()

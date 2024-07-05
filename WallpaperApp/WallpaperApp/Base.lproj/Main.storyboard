@@ -474,7 +474,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc7-3I-Jfl">
                                                 <rect key="frame" x="43" y="0.0" width="320" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -530,8 +530,8 @@
                             <constraint firstItem="jFd-E6-Kfu" firstAttribute="top" secondItem="9tb-0z-Lkb" secondAttribute="top" constant="30" id="k5S-lL-kFE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="knx-dQ-JcK">
-                        <barButtonItem key="backBarButtonItem" title="戻る" id="LYf-vm-SfI"/>
+                    <navigationItem key="navigationItem" style="editor" id="knx-dQ-JcK">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="mx8-bd-DbK"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -573,9 +573,7 @@
                             <constraint firstItem="VsJ-Gf-Bc2" firstAttribute="top" secondItem="Fms-BE-qON" secondAttribute="top" id="PVa-J0-GcD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Un-OC-nbs">
-                        <barButtonItem key="backBarButtonItem" title="戻る" id="ihJ-Vo-RHQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0Un-OC-nbs"/>
                     <connections>
                         <outlet property="scrollView" destination="VsJ-Gf-Bc2" id="TVc-Px-mMU"/>
                     </connections>
